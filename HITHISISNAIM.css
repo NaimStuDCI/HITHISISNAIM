@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #ffeb3b url('https://art.ngfiles.com/images/2976000/2976357_mukkywaffle_banana-y2k-vector-illustration-design.png?f1673220659') 
+        no-repeat center center fixed;
+    background-size: 80% 100%; /* Ensures full coverage of the screen */
+    text-align: center;
+    color: #ffcc00;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: rgba(255, 255, 204, 0.9);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1, h2 {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: black;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+}
+
+p {
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+    color: #663300;
+    font-size: 16px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+/* Collage styles */
+.collage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.collage-item {
+    width: 150px;
+    text-align: center;
+}
+
+.collage-item img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.collage-item img:hover {
+    transform: scale(1.1);
+}
+
+.caption {
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+    font-size: 14px;
+    margin-top: 5px;
+    color: #663300;
+}
+
+/* Button styles */
+button {
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e6b800;
+}
+
+/* Guestbook form */
+#guestbook-form input {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    width: 80%;
+    max-width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#entries-list {
+    list-style: none;
+    padding: 0;
+}
+
+#entries-list li {
+    background: #fff;
+    padding: 10px;
+    margin: 5px auto;
+    max-width: 400px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+#caption {
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
+    color: white;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}

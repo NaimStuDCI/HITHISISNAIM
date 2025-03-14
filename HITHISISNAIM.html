@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Banana Edition</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://art.ngfiles.com/images/2976000/2976357_mukkywaffle_banana-y2k-vector-illustration-design.png?f1673220659') no-repeat center center fixed;
+            background-size: 80% 100%;
+            text-align: center;
+            color: #ffcc00;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: rgba(255, 255, 204, 0.9);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1,
+        h2 {
+            color: #ffcc00;
+        }
+
+        p {
+            color: #663300;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .collage {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .collage-item {
+            width: 150px;
+            text-align: center;
+        }
+
+        .collage-item img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .caption {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* Guestbook Form Styles */
+        #guestbook-form input,
+        #guestbook-form button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        #guestbook-form input {
+            width: 200px;
+            margin: 5px;
+        }
+
+        button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e6b800;
+        }
+
+        /* Messages Section */
+        #guestbook-entries ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #guestbook-entries li {
+            background-color: rgba(255, 255, 204, 0.9);
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to My Banana World!</h1>
+        <p>Hello! I'm Naim, a passionate banana enthusiast. Welcome to my personal website! Don't forget to Bookmark it!</p>
+
+        <div class="section">
+            <h2>About Me</h2>
+            <img src="/iOS.jpg" alt="ProfilePicture" width="200px" length="400px">
+            <p>Ever since I first laid my eyes on that Golden Arch, I couldn't get it out of my mind! It wasn't until I realized that the peel could be removed that my real 'nana addiction began. I LOVE BANANAS! There, I said it—loud and proud! I'm an addict. When I see one, I just grab it! Some people I look up to are: Donkey Kong (Think of all the bananas he has eaten in his lifetime!) I can only dream of reaching his level... Peely from Fortnite; I mean, c'mon, he's LITERALLY A BANANA! The lady from the Chiquita sticker! She icon of banana greatness, and let's not forget about that hat she wears! Yum!</p>
+        </div>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <p>Peeling bananas, making banana bread, and creating any type of banana-themed content.</p>
+        </div>
+
+        <div class="section">
+            <h2>Hobbies</h2>
+            <p>Eating bananas, collecting banana-themed items, and spreading banana joy!</p>
+        </div>
+
+        <div class="section">
+            <h2>My Banana Collage</h2>
+            <div class="collage">
+                <div class="collage-item">
+                    <img src="/Downfalltemp4.webp" alt="Banana 1">
+                    <div class="caption">ALL HAIL KING PEELY</div>
+                </div>
+                <div class="collage-item">
+                    <img src="/donkey_kong_bananas.webp" alt="Banana 2">
+                    <div class="caption">Still holds the record of eating the most bananas EVER!</div>
+                </div>
+                <div class="collage-item">
+                    <img src="/Chiquita_logo_2019.svg" alt="Banana 3">
+                    <div class="caption">Sometimes I dream I am one of the Fruits in her hat...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guestbook Section -->
+        <div class="section">
+            <h2>Guestbook</h2>
+            <form id="guestbook-form">
+                <input type="text" id="guest-name" placeholder="Your Name" maxlength="30" required>
+                <input type="text" id="guest-message" placeholder="Your Message (max 100 chars)" maxlength="100" required>
+                <button type="submit">Sign Guestbook</button>
+            </form>
+            <div id="guestbook-entries" class="section">
+                <h3>Messages</h3>
+                <ul id="entries-list"></ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Contact</h2>
+            <p>Email: [nanacatcher1997@ripe.now]</p>
+            <p>Social Media: [@PEELORDIE97]</p>
+        </div>
+    </div>
+
+    <script>
+        // Guestbook functionality
+        const guestbookForm = document.getElementById('guestbook-form');
+        const guestName = document.getElementById('guest-name');
+        const guestMessage = document.getElementById('guest-message');
+        const entriesList = document.getElementById('entries-list');
+
+        guestbookForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const name = guestName.value;
+            const message = guestMessage.value;
+
+            if (name && message) {
+                // Create a new list item
+                const newEntry = document.createElement('li');
+                newEntry.innerHTML = `<strong>${name}</strong>: ${message}`;
+                
+                // Append the new entry to the list
+                entriesList.appendChild(newEntry);
+                
+                // Clear the form inputs
+                guestName.value = '';
+                guestMessage.value = '';
+            }
+        });
+    </script>
+</body>
+
+</html>
